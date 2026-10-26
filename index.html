@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma. Anna Loren S. Galacgac | Professional Portfolio</title>
+    <style>
+        :root {
+            --bg-main: #f4f6f4;
+            --surface: #ffffff;
+            --primary: #2d4a3e;
+            --primary-light: #e8ebe7;
+            --accent: #556b2f;
+            --text-dark: #2c3531;
+            --text-muted: #616e68;
+            --border-color: #d1d7d3;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .portfolio-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--surface);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 3.5rem 3rem;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        header .subtitle {
+            font-size: 1.25rem;
+            color: #cedbd3;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .badge.top-rated {
+            background: var(--accent);
+            border-color: transparent;
+            font-weight: 600;
+        }
+
+        .content {
+            padding: 3rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        section:last-of-type {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.5rem;
+        }
+
+        .about-text {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            text-align: justify;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tools-card {
+            background: var(--bg-main);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .tools-card h3 {
+            font-size: 1.05rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .tools-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .job-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .job-company-date {
+            font-size: 0.95rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .edu-list li {
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+
+        .connect-box {
+            background: var(--primary-light);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .connect-box p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e332a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(45, 74, 62, 0.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--primary-light);
+        }
+
+        @media (max-width: 600px) {
+            header { padding: 2rem 1.5rem; }
+            .content { padding: 2rem 1.5rem; }
+            header h1 { font-size: 2rem; }
+            .job-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="portfolio-container">
+    <header>
+        <h1>Ma. Anna Loren S. Galacgac</h1>
+        <div class="subtitle">Sales Development Representative (SDR) & Appointment Setter</div>
+        <div class="meta-badges">
+            <div class="badge">📍 Buenavista, Guimaras, Philippines</div>
+            <div class="badge">💻 Remote Work Specialist</div>
+            <div class="badge top-rated">⭐ Upwork Top Rated</div>
+        </div>
+    </header>
+
+    <div class="content">
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-text">
+                Results-driven Professional Sales Development Representative (SDR) and Virtual Assistant backed by over a decade of operational excellence within the BPO, telesales, and customer engagement sectors. Expert in driving high-ticket appointment conversions, cross-cultural client onboarding, CRM workflow maintenance, and technical solutions alignment across asynchronous international time zones.
+            </div>
+        </section>
+
+        <section id="expertise">
+            <h2>Expertise & Core Tools</h2>
+            <div class="tools-grid">
+                <div class="tools-card">
+                    <h3>Sales & Outreach</h3>
+                    <p>Outbound Telemarketing, High-Ticket Closings, Cold Calling, Pipeline Tracking, Lead Qualification.</p>
+                </div>
+                <div class="tools-card">
+                    <h3>Operations & Admin</h3>
+                    <p>Asynchronous Inbox Support, Multi-zone Calendar Control, Content Structuring, Document Workflows.</p>
+                </div>
+                <div class="tools-card">
+                    <h3>Tech Stack</h3>
+                    <p>HubSpot CRM, GoHighLevel, Canva Business, Zoom Enterprise, Microsoft Teams, Vocaroo.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            
+            <div class="timeline-item">
+                <div class="job-header">
+                    <div class="job-title">Sales Development Representative (SDR)</div>
+                    <div class="job-company-date">Whova | February 2026 – Present</div>
+                </div>
+                <ul>
+                    <li>Spearheaded outbound target generation, qualifying and advancing top-tier corporate leads through targeted operations.</li>
+                    <li>Sustained deep tracking data and mapped real-time lead progress indicators inside HubSpot CRM environments.</li>
+                    <li>Nurtured clean handoffs to direct closings teams while fully aligning with local network protection protocols and corporate NDAs.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-header">
+                    <div class="job-title">Virtual Assistant & Appointment Setter</div>
+                    <div class="job-company-date">Freelance / Upwork Ecosystem | 2024 – Present</div>
+                </div>
+                <ul>
+                    <li>Earned elite Top Rated status markers, executing business infrastructure workflows for multi-national operators.</li>
+                    <li>Crafted administrative data logs, reduced system operational friction, and maintained fluid follow-up rhythms.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
